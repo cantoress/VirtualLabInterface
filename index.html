@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang = "ru">
+    <head>
+        <meta charset = "utf-8">
+        <title>Transport problem</title>
+        <link href="style.css" rel="stylesheet">
+        <link href="bootstrap-3.3.7-dist\css\bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    </head>
+    <body role = "document">
+        <script src='http://code.jquery.com/jquery-latest.js'></script>
+        <div class = "container">
+            <header class = "main-header clearfix">
+                <h3 class = "lab-name">Транспортная задача (метод северо-западного угла)</h1>
+                <button class = "btn btn-primary btn-help" id = "btn-help">Справка</button>
+            </header>
+            <div class = "main clearfix" id = "task">
+                <div class = "task col-md-6">
+                    <h4>Задание</h4>
+                    <p>Вариант задания:</p>
+                    <table class = "task-table">
+                        <tr>
+                            <td>5</td><td>4</td><td>8</td><td>7</td><td>3</td><td>20</td>
+                        </tr>
+                        <tr>
+                            <td>4</td><td>8</td><td>7</td><td>1</td><td>2</td><td>10</td>
+                        </tr>
+                        <tr>
+                            <td>6</td><td>4</td><td>1</td><td>9</td><td>3</td><td>10</td>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>30</td>
+                        </tr>
+                        <tr>
+                            <td>10</td><td>15</td><td>20</td><td>10</td><td>15</td><td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class = "decision col-md-6">
+                    <h4>Решение</h4>
+                    <p>Допустимый план:</p>
+                    <table class = "decision-table">
+                        <tr>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "11">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "12">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "13">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "14">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "15">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "21">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "22">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "23">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "24">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "25">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "31">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "32">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "33">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "34">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "35">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "41">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "42">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "43">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "44">
+                            </td>
+                            <td>
+                                <input type = "text" class = "table-input" value = "0" id = "45">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class = "decision-sum">
+                        <p>
+                            Введите стоимость перевозки:
+                            <input type = "text" class = "form-control" placeholder = "Введите число">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class = "main closed clearfix" id = "help">
+                <p>По представленной таблице стоимости перевозки составьте допустимый план перевозок с помощью метода северо-западного угла.<br>
+                    Посчитайте стоимость перевозки по полученному плану.
+                </p>
+                <p>
+                    В правой части экрана представлена таблица стоимости перевозок между складами и потребителями.
+                    В правом столбце показано количество товаров на складах.
+                    В нижней строке обозначена необходимость потребителей в товаре.
+                    Сумма необходимого товара для всех потребителей равна сумме доступного товара на складах.
+                </p>
+                <p>
+                    Метод северо-западного угла заключается в следующем:<br>
+                    На каждом этапе максимально возможным числом заполняют левую верхнюю клетку оставшейся части таблицы.
+                    Заполнение таким образом, что полностью выносится товар из соответствующего склада или полностью удовлетворяется потребность соответствующего потребителя.<br>
+                    Для удобства заполнения при наведении мышки на ячейку в таблице решения подсвечивается строка и столбец, соответствующие этой ячейке, в таблице задания.
+                    Также все ненулевые ячейки построенного допустимого плана подсвечиваются, что облегчает проверку решения.
+                </p>
+                <p>
+                    Для выполнения задания необходимо заполнить таблицу решения методом северо-западного угла и посчитать стоимость перевозки товаров по этому плану.
+                </p>
+            </div>
+            <footer class = "main-footer clearfix">
+                <button class = "btn btn-success btn-go" id = "btn-go">Завершить</button>
+            </footer>
+        </div>
+        <script src="script.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+body{
+    min-width: 710px;
+}
+
+div.container{
+    margin-top:15px;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.main-header{
+    padding-top: 30px;
+    min-height: 100px;
+}
+
+.lab-name{
+    float:left;
+}
+
+.btn-help{
+    margin-top: 20px;
+    float:right;
+}
+
+.main{
+    min-height: 400px;
+}
+
+div.task, div.decision{
+    min-height: 400px;
+    padding: 20px;
+    border: 1px solid gray;
+}
+
+.task h4{
+	margin-bottom:30px;
+}
+
+.task-table{
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+.task-table td{
+    border: 1px solid gray;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.task-table tr:last-child td:not(:last-child){
+    background-color:#FFFFD0;
+}
+
+.task-table tr:not(:last-child) td:last-child{
+    background-color:#FFFFD0;
+}
+
+.task-table tr:last-child td:last-child{
+    border:none;
+}
+
+.decision h4{
+    margin-bottom: 30px;
+}
+.decision p{
+    margin-bottom: 30px;
+}
+
+.decision-table{
+    margin-top: 25px;
+    border-collapse: collapse;
+}
+
+.decision-table td{
+    border: 1px solid gray;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-input{
+    border:none;
+    text-align: center;
+    width: 40px;
+	height: 40px;
+}
+
+.decision-sum{
+    margin-top: 40px;
+}
+
+.decision-sum p{
+    margin-bottom: 0;
+}
+
+.decision-sum input{
+    display: inline-block;
+    width: 300px;
+}
+
+.main-footer{
+    padding-bottom: 30px;
+    min-height: 100px;
+}
+
+.btn-go{
+    margin-top: 30px;
+    float:right;
+}
+
+.main#help{
+    padding:0 20px;
+}
+
+.main#help p{
+    font-size: 14px;
+}
+
+.not-null-input-line{
+    background-color: #FFFFF0;
+}
+
+.not-null-input{
+    background-color: #FFFF90;
+}
+
+.closed{
+    display:none;
+}
